@@ -1,3 +1,5 @@
+/* global Ext, developmentMode */
+
 app.application = false;
 app.content = Ext.create('Ext.Panel', {
     frame: false,
@@ -10,6 +12,7 @@ app.content = Ext.create('Ext.Panel', {
     flex: 1
 });
 app.header = Ext.create('Ext.Panel', {
+    ui: 'wm-menu-panel',
     contentEl: 'header',
     bodyCls: 'formBody',
     cls: 'adminHeader',
@@ -51,7 +54,7 @@ Ext.define('app.menuPanel', {
         var menuHandler = this.expandMenu;
         if (!this.menuCollapsed) {
             menuTriggerIcon = app.wwwRoot + 'i/system/left-btn.gif';
-            menuHandler = this.collapseMenu
+            menuHandler = this.collapseMenu;
         }
 
         menuButtons.push({
@@ -123,9 +126,33 @@ Ext.application({
             },
             border: false,
             scrollable: 'y',
-            cls: 'treelist-with-nav',
+            ui: 'wm-menu-panel',
             dock: 'left',
-            items: [{
+            items: [
+                {
+                    xtype: 'button',
+                    ui: 'wm-menu-button-small',
+                    iconCls: 'x-fa fa-angle-left',
+                    height: 44,
+                    enableToggle: true,
+                    toggleHandler: function (button, pressed) {
+                        var treelist = app.menu.down('treelist'),
+                                navBtn = button,
+                                ct = treelist.ownerCt;
+//                treelist.setMicro(pressed);
+                        if (pressed) {
+                            navBtn.setPressed(true);
+                            this.oldWidth = ct.width;
+                            ct.setWidth(44);
+                        } else {
+                            ct.setWidth(this.oldWidth);
+                        }
+                        if (Ext.isIE8) {
+                            this.repaintList(treelist, pressed);
+                        }
+                    }
+                },
+                {
                     xtype: 'treelist',
                     expanderFirst: false,
                     highlightPath: true,
@@ -136,7 +163,12 @@ Ext.application({
                             expanded: true,
                             children: app.menuData
                         }
-                    })
+                    }),
+                    listeners: {
+                        itemclick: function (cmp, record, item, index, e, eOpts) {
+                            window.location.replace(record.node.get('url'));
+                        }
+                    }
                 }]
         });
         app.content.addDocked(app.menu);
