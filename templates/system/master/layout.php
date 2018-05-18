@@ -4,6 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 $theme = $this->get('theme');
 
 $res = Resource::getInstance();
+$res->addJs('/resources/x-master-theme/js/Overrides.js', -3);
 $res->addJs('/js/app/system/common.js', -2);
 $res->addJs('/resources/x-master-theme/js/Application.js', -1);
 
