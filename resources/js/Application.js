@@ -35,6 +35,7 @@ Ext.application({
             devMode: developmentMode,
             split: true,
             reference: 'treelistContainer',
+            itemId: 'app_menu',
             layout: {
                 type: 'absolute',
 
@@ -44,6 +45,9 @@ Ext.application({
             scrollable: false,
             ui: 'wm-menu-panel',
             dock: 'left',
+            stateful: true,
+            stateId: '_appXMasterMenuState',
+            stateEvents: ['toggle'],
             dockedItems: [
 
                 {
@@ -53,25 +57,33 @@ Ext.application({
                     height: 44,
                     dock: 'top',
                     enableToggle: true,
+                    stateful: true,
+                    stateId: '_appXMButtonState',
+                    getState: function() {
+                        return { pressed: this.pressed };
+                    },
+
+                    applyState: function(state) {
+                        this.toggle(state.pressed);
+                    },
                     toggleHandler: function(button, pressed) {
-                        var menu = app.menu,
+                        var menu = button.up('#app_menu'),
                             treelist = menu.down('treelist'),
                             container = treelist.up('container'),
                             navBtn = button,
                             ct = treelist.ownerCt;
-                        //                treelist.setMicro(pressed);
                         if (pressed) {
                             navBtn.setPressed(true);
                             navBtn.setIconCls('x-fa fa-angle-right');
-                            this.oldWidth = menu.width;
-                            this.oldContWidth = container.width;
+
                             menu.setWidth(40);
 
                         } else {
                             navBtn.setIconCls('x-fa fa-angle-left');
-                            container.setWidth(this.oldContWidth);
-                            menu.setWidth(this.oldWidth);
+                            container.setWidth(265);
+                            menu.setWidth(250);
                         }
+                        menu.fireEvent('toggle');
 
                     }
                 }
