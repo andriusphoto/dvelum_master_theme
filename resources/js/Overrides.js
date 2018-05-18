@@ -6,3 +6,10 @@ Ext.define('app.fileUploadWindowOverride', {
         this.simpleUpload.setHeight(100);
     }
 });
+Ext.define('app.crud.modules.CreateWindowOverride', {
+    override: 'app.crud.modules.CreateWindow',
+    initComponent: function() {
+        this.callParent();
+        this.setHeight(130);
+    }
+});
