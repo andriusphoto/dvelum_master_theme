@@ -6461,11 +6461,11 @@
     padding: 7px 7px 7px 7px;
     border-width: 1px;
     border-style: solid;
-    background-color: #1b1b1b;
+    background-color: #353535;
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-btn-wm-menu-button-small-mc {
-    background-color: #1b1b1b;
+    background-color: #353535;
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-btn-wm-menu-button-small {
@@ -6558,7 +6558,7 @@
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:445 */
 .x-btn-wm-menu-button-small {
-    border-color: #1b1b1b;
+    border-color: #5d74ac;
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:452 */
 .x-btn-button-wm-menu-button-small {
@@ -6697,7 +6697,7 @@
 .x-btn-focus.x-btn-wm-menu-button-small {
     border-color: #014886;
     background-image: none;
-    background-color: #1b1b1b;
+    background-color: #353535;
     -webkit-box-shadow: #c0cfdd 0 1px 0px 0 inset, #c0cfdd 0 -1px 0px 0 inset, #c0cfdd -1px 0 0px 0 inset, #c0cfdd 1px 0 0px 0 inset;
     -moz-box-shadow: #c0cfdd 0 1px 0px 0 inset, #c0cfdd 0 -1px 0px 0 inset, #c0cfdd -1px 0 0px 0 inset, #c0cfdd 1px 0 0px 0 inset;
     box-shadow: #c0cfdd 0 1px 0px 0 inset, #c0cfdd 0 -1px 0px 0 inset, #c0cfdd -1px 0 0px 0 inset, #c0cfdd 1px 0 0px 0 inset;
@@ -6723,8 +6723,6 @@
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:823 */
 .x-btn-focus.x-btn-over.x-btn-wm-menu-button-small {
-    background-image: none;
-    background-color: #1b1b1b;
     -webkit-box-shadow: #c0ceda 0 1px 0px 0 inset, #c0ceda 0 -1px 0px 0 inset, #c0ceda -1px 0 0px 0 inset, #c0ceda 1px 0 0px 0 inset;
     -moz-box-shadow: #c0ceda 0 1px 0px 0 inset, #c0ceda 0 -1px 0px 0 inset, #c0ceda -1px 0 0px 0 inset, #c0ceda 1px 0 0px 0 inset;
     box-shadow: #c0ceda 0 1px 0px 0 inset, #c0ceda 0 -1px 0px 0 inset, #c0ceda -1px 0 0px 0 inset, #c0ceda 1px 0 0px 0 inset;
@@ -6765,7 +6763,7 @@
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:952 */
 .x-btn-focus .x-btn-wm-menu-button-small-mc {
-    background-color: #1b1b1b;
+    background-color: #353535;
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:964 */
 .x-btn-over .x-btn-wm-menu-button-small-tl,
@@ -6801,7 +6799,7 @@
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:1000 */
 .x-btn-focus.x-btn-over .x-btn-wm-menu-button-small-mc {
-    background-color: #1b1b1b;
+    background-color: #353535;
 }
 /* /var/www/www/locatory-workspace/ext/ext-6.2.1/classic/theme-neutral/sass/src/button/Button.scss:1014 */
 .x-btn.x-btn-menu-active .x-btn-wm-menu-button-small-tl,

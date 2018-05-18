@@ -121,19 +121,47 @@ Ext.application({
             split: true,
             reference: 'treelistContainer',
             layout: {
-                type: 'vbox',
-                align: 'stretch'
+                type: 'fit',
+//                align: 'stretch'
             },
+            scrollable: false,
             border: false,
-            scrollable: 'y',
+//            scrollable: 'y',
             ui: 'wm-menu-panel',
             dock: 'left',
-            items: [
+            listeners: {
+                "el": {
+                    "resize": function (e) {
+//                        debugger
+                    }
+                }
+
+//                resize: function (cmp) {
+//                    var panelHeight = cmp.getEl().getHeight();
+//                    panel = cmp;
+//                    var treeListHeight = cmp.down('treelist').getEl().getHeight();
+//                    var scrollBtn = cmp.down('#scrollBtnId');
+//                    if (panelHeight > treeListHeight) {
+//                        scrollBtn.hide();
+//                        console.dir('hide');
+//                    } else {
+//                        console.dir('show');
+//                        console.dir('show');
+//                        scrollBtn.show();
+//                    }
+//                    ;
+//                    console.dir(panelHeight);
+//                    console.dir(treeListHeight);
+//                }
+            },
+            dockedItems: [
+
                 {
                     xtype: 'button',
                     ui: 'wm-menu-button-small',
                     iconCls: 'x-fa fa-angle-left',
                     height: 44,
+                    dock: 'top',
                     enableToggle: true,
                     toggleHandler: function (button, pressed) {
                         var treelist = app.menu.down('treelist'),
@@ -142,9 +170,11 @@ Ext.application({
 //                treelist.setMicro(pressed);
                         if (pressed) {
                             navBtn.setPressed(true);
+                            navBtn.setIconCls('x-fa fa-angle-right');
                             this.oldWidth = ct.width;
                             ct.setWidth(44);
                         } else {
+                            navBtn.setIconCls('x-fa fa-angle-left');
                             ct.setWidth(this.oldWidth);
                         }
                         if (Ext.isIE8) {
@@ -153,11 +183,40 @@ Ext.application({
                     }
                 },
                 {
+                    xtype: 'button',
+                    itemId: 'scrollBtnId',
+                    ui: 'wm-menu-button-small',
+                    iconCls: 'x-fa fa-angle-down',
+                    height: 23,
+                    dock: 'bottom',
+                    toggleHandler: function (button, pressed) {
+                        var treelist = app.menu.down('treelist'),
+                                navBtn = button,
+                                ct = treelist.ownerCt;
+//                treelist.setMicro(pressed);
+                        if (pressed) {
+                            navBtn.setPressed(true);
+                            navBtn.setIconCls('x-fa fa-angle-right');
+                            this.oldWidth = ct.width;
+                            ct.setWidth(44);
+                        } else {
+                            navBtn.setIconCls('x-fa fa-angle-left');
+                            ct.setWidth(this.oldWidth);
+                        }
+                        if (Ext.isIE8) {
+                            this.repaintList(treelist, pressed);
+                        }
+                    }
+                }
+            ],
+            items: [
+                {
                     xtype: 'treelist',
                     expanderFirst: false,
                     highlightPath: true,
                     reference: 'treelist',
                     ui: 'nav',
+                    scrollable: 'y',
                     store: Ext.create('Ext.data.TreeStore', {
                         root: {
                             expanded: true,
@@ -170,7 +229,8 @@ Ext.application({
                         }
                     }
                 }]
-        });
+        }
+        );
         app.content.addDocked(app.menu);
         app.viewport = Ext.create('Ext.container.Viewport', {
             cls: 'formBody',

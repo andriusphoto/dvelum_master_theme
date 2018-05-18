@@ -1,11 +1,11 @@
     /* ui mixin: wm-menu-button for of type: extjs-button-small-ui */
     
-    $ui-wm-menu-button-small-border-color: rgba(27, 27, 27, 1);
-    $ui-wm-menu-button-small-background-color: rgba(27, 27, 27, 1);
+    $ui-wm-menu-button-small-border-color: #5D74AC;
+    $ui-wm-menu-button-small-background-color:  rgba(53, 53, 53, 1);;
     $ui-wm-menu-button-small-background-color-over: rgba(53, 53, 53, 1);
-    $ui-wm-menu-button-small-background-color-focus: rgba(27, 27, 27, 1);
+    $ui-wm-menu-button-small-background-color-focus:  rgba(53, 53, 53, 1);
     $ui-wm-menu-button-small-background-color-pressed: rgba(53, 53, 53, 1);
-    $ui-wm-menu-button-small-background-color-focus-over: rgba(27, 27, 27, 1);
+    $ui-wm-menu-button-small-background-color-focus-over:  rgba(53, 53, 53, 1);
     $ui-wm-menu-button-small-background-color-focus-pressed: rgba(53, 53, 53, 1);
     $ui-wm-menu-button-small-background-color-disabled: rgba(27, 27, 27, 1);
     @if $include-ext-button-button !=false {
