@@ -1,6 +1,6 @@
 <?php
 return [
-    'id' => 'andrius-master-theme',
+    'id' => 'x-master-theme',
     'version' => '1.0.0',
     'author' => 'Andrius Paulavičius',
     'name' => 'Master Theme',

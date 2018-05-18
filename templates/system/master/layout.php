@@ -5,7 +5,7 @@ $theme = $this->get('theme');
 
 $res = Resource::getInstance();
 $res->addJs('/js/app/system/common.js', -2);
-$res->addJs('/resources/andrius-master-theme/js/Application.js', -1);
+$res->addJs('/resources/x-master-theme/js/Application.js', -1);
 
 $res->addJs('/js/lang/' . $this->get('lang') . '.js', -1000, true);
 
@@ -14,15 +14,15 @@ if ($this->get('development'))
 else
     $res->addJs('/js/lib/extjs/build/ext-all.js', 2, true, 'head');
 
-$res->addJs('/resources/andrius-master-theme/theme-master.js', 3, true, 'head');
+$res->addJs('/resources/x-master-theme/theme-master.js', 3, true, 'head');
 
 $res->addJs('/js/lib/extjs/build/classic/locale/locale-' . $this->get('lang') . '.js', 4, true, 'head');
 
 $res->addInlineJs('var developmentMode = ' . intval($this->get('development')) . ';');
 
-$res->addCss('/resources/andrius-master-theme/resources/theme-master-all.css', 100);
+$res->addCss('/resources/x-master-theme/resources/theme-master-all.css', 100);
 $res->addCss('/css/system/style.css', 2);
-$res->addCss('/resources/andrius-master-theme/css/style.css', 3);
+$res->addCss('/resources/x-master-theme/css/style.css', 3);
 
 
 $token = '';

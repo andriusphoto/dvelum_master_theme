@@ -1,4 +1,4 @@
-# andrius-master-theme
+# x-master-theme
 
 Installation
 -------
