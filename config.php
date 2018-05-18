@@ -1,6 +1,6 @@
 <?php
 return [
-    'id' => 'master-theme',
+    'id' => 'andrius-master-theme',
     'version' => '1.0.0',
     'author' => 'Andrius Paulavičius',
     'name' => 'Master Theme',
@@ -14,5 +14,4 @@ return [
     ],
     'objects' =>[
     ],
-    //'post-install'=>'\\Dvelum\\Articles\\Installer'
 ];

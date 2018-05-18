@@ -1,0 +1,24 @@
+{
+  "name": "andriusphoto/dvelum_master_theme",
+  "version": "1.0.0",
+  "type": "dvelum-module",
+  "description": "Master theme for DVelum",
+  "keywords": ["dvelum","theme"],
+  "homepage": "https://github.com/andriusphoto/dvelum_master_theme",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Andrius Paulavičius",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/andriusphoto/dvelum_master_theme/issues",
+    "source": "https://github.com/andriusphoto/dvelum_master_theme"
+  },
+  "require": {
+    "php":">=7.1",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "dvelum/dvelum": ">=2.0.0"
+  }
+}
